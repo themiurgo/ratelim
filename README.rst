@@ -13,7 +13,7 @@ Installation
 Usage
 -----
 
-Say you want to call a function at most for `n_calls` during a `n_seconds` time interval.
+Say you want to call a function at most for ``n_calls`` during a ``n_seconds`` time interval.
 
 .. code-block:: python
 
@@ -23,16 +23,16 @@ Say you want to call a function at most for `n_calls` during a `n_seconds` time 
         print("hello")
 
 
-The `greedy` rate limiter calls does not delay any function call until it's really necessary.
+The ``greedy`` rate limiter calls does not delay any function call until it's really necessary.
 
 In some scenarios, for example when crawling data from an API, you want to maximize the number
 of calls you make and you want to avoid sending them in short sequence. For this goal, we can
-use the `patient` rate limiter. It distributes calls evenly between each other.
+use the ``patient`` rate limiter. It distributes calls evenly between each other.
 
 .. code-block:: python
 
     # 10 times in 5 seconds
-    # Get's called at most every 0.5 seconds
+    # Gets called at most every 0.5 seconds
     @ratelim.patient(10, 5)
     def hello(lines):
         print("hello")
