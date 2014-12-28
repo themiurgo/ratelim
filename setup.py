@@ -5,7 +5,7 @@ except ImportError:
 
 setup(
     name='ratelim',
-    version='0.1.2',
+    version='0.1.4',
     author='Antonio Lima',
     author_email='anto87@gmail.com',
     packages=['ratelim'],
@@ -13,5 +13,7 @@ setup(
     license='MIT',
     description='Makes it easy to respect rate limits.',
     long_description=open('README.rst').read(),
-    install_requires=[],
+    install_requires=[
+        "decorator",
+    ],
 )
