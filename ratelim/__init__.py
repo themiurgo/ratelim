@@ -29,14 +29,14 @@ class greedy(object):
                 if time_delta <= self.__time_interval:
                     time.sleep(self.__time_interval - time_delta + 1)
                     self.__numcalls = 0
-		    self.__last_reset = datetime.datetime.now()
+                    self.__last_reset = datetime.datetime.now()
 
             self.__numcalls += 1
             return f(*args, **kwargs)
         return wrapped_f
 
     def __numcalls__(self):
-        return self.__numcalls
+    	return self.__numcalls
 
 class patient(object):
     def __init__(self, max_calls, time_interval):
