@@ -5,7 +5,7 @@ except ImportError:
 
 setup(
     name='ratelim',
-    version='0.1.1',
+    version='0.1.2',
     author='Antonio Lima',
     author_email='anto87@gmail.com',
     packages=['ratelim'],

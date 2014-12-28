@@ -9,9 +9,9 @@ __copyright__ = "Copyright (c) 2013-2014 Antonio Lima"
 class greedy(object):
     def __init__(self, max_calls, time_interval):
     	if max_calls <= 0:
-    	    raise ValueError("max_calls must be non-negative")
+    	    raise ValueError("max_calls must be positive")
     	if time_interval <= 0:
-    	    raise ValueError("time_interval must be non-negative")
+    	    raise ValueError("time_interval must be positive")
     	self.__last_reset = None
         self.__max_calls = max_calls
         self.__time_interval = time_interval # seconds
