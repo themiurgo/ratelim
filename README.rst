@@ -1,7 +1,13 @@
 Ratelim
 =======
 
-Ratelim is a simple Python library that limits the number of times a function can be called in during a time interval. It is particularly useful when using online APIs, which commonly enforce rate limits.
+Ratelim is a simple Python library that limits the number of times a function can be called during a time interval. It is particularly useful when using online APIs, which commonly enforce rate limits.
+
+Features
+--------
+
+- Greedy and patient rate limiting.
+- Preserves function signature.
 
 Installation
 ------------
@@ -19,14 +25,14 @@ Say you want to call a function at most for ``n_calls`` during a ``n_seconds`` t
 
     # 10 times in 5 seconds
     @ratelim.greedy(10, 5)
-    def hello(lines):
+    def hello():
         print("hello")
 
 
 The ``greedy`` rate limiter calls does not delay any function call until it's really necessary.
 
 In some scenarios, for example when crawling data from an API, you want to maximize the number
-of calls you make and you want to avoid sending them in short sequence. For this goal, we can
+of calls you make and you want to avoid sending them in short sequence. To this aim, we can
 use the ``patient`` rate limiter. It distributes calls evenly between each other.
 
 .. code-block:: python
@@ -34,7 +40,7 @@ use the ``patient`` rate limiter. It distributes calls evenly between each other
     # 10 times in 5 seconds
     # Gets called at most every 0.5 seconds
     @ratelim.patient(10, 5)
-    def hello(lines):
+    def hello():
         print("hello")
 
 LICENSE
