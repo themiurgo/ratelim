@@ -6,6 +6,7 @@ Ratelim is a simple Python library that limits the number of times a function ca
 Features
 --------
 
+- Works in Py2 and Py3.
 - Greedy and patient rate limiting.
 - Preserves function signature.
 

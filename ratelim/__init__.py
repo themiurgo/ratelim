@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 import time
 import datetime
 
@@ -10,11 +12,11 @@ __copyright__ = "Copyright (c) 2013-2014 Antonio Lima"
 
 class greedy(object):
     def __init__(self, max_calls, time_interval):
-    	if max_calls <= 0:
-    	    raise ValueError("max_calls must be positive")
-    	if time_interval <= 0:
-    	    raise ValueError("time_interval must be positive")
-    	self.__last_reset = None
+        if max_calls <= 0:
+            raise ValueError("max_calls must be positive")
+        if time_interval <= 0:
+            raise ValueError("time_interval must be positive")
+        self.__last_reset = None
         self.__max_calls = max_calls
         self.__time_interval = time_interval # seconds
         self.__numcalls = 0
@@ -39,14 +41,14 @@ class greedy(object):
         return decorator(self.wrapped_f, f)
 
     def __numcalls__(self):
-    	return self.__numcalls
+        return self.__numcalls
 
 class patient(object):
     def __init__(self, max_calls, time_interval):
-    	if max_calls <= 0:
-    	    raise ValueError("max_calls must be positive")
-    	if time_interval <= 0:
-    	    raise ValueError("time_interval must be positive")
+        if max_calls <= 0:
+            raise ValueError("max_calls must be positive")
+        if time_interval <= 0:
+            raise ValueError("time_interval must be positive")
         self.__last_call = None
         self.__time_interval = float(time_interval) / max_calls # seconds
 
@@ -80,9 +82,9 @@ if __name__ == "__main__":
     @greedy(15,10)
     def func1(i):
         """This is func1"""
-        print "I am greedily called for the #{} time".format(i)
+        print("I am greedily called for the #{} time".format(i))
 
-    for i in xrange(30):
+    for i in range(30):
         func1(i)
 
     # Example: func2 also can't be called not more than 30 times every minute, but
@@ -91,8 +93,8 @@ if __name__ == "__main__":
     @patient(15,10)
     def func2(i):
         """This is func2"""
-        print "I am patiently called for the #{} time".format(i)
+        print("I am patiently called for the #{} time".format(i))
 
 
-    for i in xrange(30):
+    for i in range(30):
         func2(i)
