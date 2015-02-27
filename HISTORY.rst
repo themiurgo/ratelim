@@ -3,6 +3,16 @@
 History
 -------
 
+0.1.6 (2015-02-27)
+~~~~~~~~~~~~~~~~~~
+
+- Added source distribution to PyPI package.
+
+0.1.5 (2015-01-28)
+~~~~~~~~~~~~~~~~~~
+
+- Corrected indendation issues for Py3.
+
 0.1.3 (2014-12-28)
 ~~~~~~~~~~~~~~~~~~
 
