@@ -44,6 +44,11 @@ use the ``patient`` rate limiter. It distributes calls evenly between each other
     def hello():
         print("hello")
 
+Contribute
+----------
+
+You are more than welcome to contribuite to this project. You can open a new issue to report a bug or a wanted feature. You can also contribute directly with code, by sending a pull request.
+
 LICENSE
 -------
 
