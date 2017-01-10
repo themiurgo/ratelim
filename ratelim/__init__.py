@@ -10,6 +10,26 @@ __author_email__ = "anto87@gmail.com"
 __license__ = "MIT"
 __copyright__ = "Copyright (c) 2013-2014 Antonio Lima"
 
+
+class timed(object):
+    """Wait for an arbitrary time, specified using a generator."""
+
+    def __init__(self, wait_times):
+        self.wait_times = wait_times
+
+    def wrapped_f(self, f, *args, **kwargs):
+        # At the first call, reset the time
+        wait_time = next(self.wait_times)
+        if wait_time <= 0:
+            print("Warning: one of the times generated was less than 0")
+            wait_time = 1.0
+        time.sleep(wait_time)
+        return f(*args, **kwargs)
+
+    def __call__(self, f, *args, **kwargs):
+        return decorator(self.wrapped_f, f)
+
+
 class greedy(object):
     def __init__(self, max_calls, time_interval):
         if max_calls <= 0:
